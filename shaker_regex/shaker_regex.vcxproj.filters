@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="pcre">
+      <UniqueIdentifier>{163e5afc-4cbe-4712-b946-acae7d5b0b28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaker_regex">
+      <UniqueIdentifier>{6e4da9b9-a23c-4f66-ad25-dfb8aff6fb0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaker_regex\nocopy">
+      <UniqueIdentifier>{824bb7b5-c60e-4974-a2d6-5a735c42a399}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaker_regex\regex_cache">
+      <UniqueIdentifier>{43359271-bb41-4089-aeca-b53890eb1d0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="smart_ptr">
+      <UniqueIdentifier>{a5202806-249f-4565-90b7-f5d2fcf4127d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileIo">
+      <UniqueIdentifier>{b171c7d1-ec8f-401b-bff4-8e32f8b395b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaker_debug">
+      <UniqueIdentifier>{7f12b0ab-5c15-4273-902c-7e411c1d092f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaker_assert">
+      <UniqueIdentifier>{f5667222-f69e-434c-8adc-6c7976cb63f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaker_timer">
+      <UniqueIdentifier>{ba73f0c8-d168-44d9-aa81-747bb8406c6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaker_serialization">
+      <UniqueIdentifier>{42c027f6-faad-4850-94ca-b85e12744032}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaker_object">
+      <UniqueIdentifier>{8161348b-1102-4f71-a07d-5915c5673e40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaker_base">
+      <UniqueIdentifier>{ba23a061-32e3-48ac-9d9a-859f5521be0e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pcre.h">
+      <Filter>pcre</Filter>
+    </ClInclude>
+    <ClInclude Include="regex.h">
+      <Filter>shaker_regex</Filter>
+    </ClInclude>
+    <ClInclude Include="shaker_define.h">
+      <Filter>shaker_regex</Filter>
+    </ClInclude>
+    <ClInclude Include="nocopy.h">
+      <Filter>shaker_regex\nocopy</Filter>
+    </ClInclude>
+    <ClInclude Include="regex_cache.h">
+      <Filter>shaker_regex\regex_cache</Filter>
+    </ClInclude>
+    <ClInclude Include="auto_ptr.hpp">
+      <Filter>smart_ptr</Filter>
+    </ClInclude>
+    <ClInclude Include="shared_ptr.hpp">
+      <Filter>smart_ptr</Filter>
+    </ClInclude>
+    <ClInclude Include="weak_ptr.hpp">
+      <Filter>smart_ptr</Filter>
+    </ClInclude>
+    <ClInclude Include="smart_ptr.hpp">
+      <Filter>smart_ptr</Filter>
+    </ClInclude>
+    <ClInclude Include="FileIO.h">
+      <Filter>FileIo</Filter>
+    </ClInclude>
+    <ClInclude Include="FileOption.h">
+      <Filter>FileIo</Filter>
+    </ClInclude>
+    <ClInclude Include="shaker_debug.h">
+      <Filter>shaker_debug</Filter>
+    </ClInclude>
+    <ClInclude Include="shaker_assert.h">
+      <Filter>shaker_assert</Filter>
+    </ClInclude>
+    <ClInclude Include="shaker_timer.h">
+      <Filter>shaker_timer</Filter>
+    </ClInclude>
+    <ClInclude Include="shaker_serialization.h">
+      <Filter>shaker_serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="shaker_object.h">
+      <Filter>shaker_object</Filter>
+    </ClInclude>
+    <ClInclude Include="shaker_base.h">
+      <Filter>shaker_base</Filter>
+    </ClInclude>
+    <ClInclude Include="shaker_string.h">
+      <Filter>shaker_base</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="regex.cpp">
+      <Filter>shaker_regex</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="regex_cache.cpp">
+      <Filter>shaker_regex\regex_cache</Filter>
+    </ClCompile>
+    <ClCompile Include="FileIO.cpp">
+      <Filter>FileIo</Filter>
+    </ClCompile>
+    <ClCompile Include="shaker_debug.cpp">
+      <Filter>shaker_debug</Filter>
+    </ClCompile>
+    <ClCompile Include="shaker_timer.cpp">
+      <Filter>shaker_timer</Filter>
+    </ClCompile>
+    <ClCompile Include="shaker_string.cpp">
+      <Filter>shaker_base</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="regex.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
