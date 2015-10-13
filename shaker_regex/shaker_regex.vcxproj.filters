@@ -49,15 +49,12 @@
     <Filter Include="shaker_base">
       <UniqueIdentifier>{ba23a061-32e3-48ac-9d9a-859f5521be0e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="define">
+      <UniqueIdentifier>{95a48b5a-76a1-415e-8573-e985850fa480}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pcre.h">
-      <Filter>pcre</Filter>
-    </ClInclude>
     <ClInclude Include="regex.h">
-      <Filter>shaker_regex</Filter>
-    </ClInclude>
-    <ClInclude Include="shaker_define.h">
       <Filter>shaker_regex</Filter>
     </ClInclude>
     <ClInclude Include="nocopy.h">
@@ -105,6 +102,21 @@
     <ClInclude Include="shaker_string.h">
       <Filter>shaker_base</Filter>
     </ClInclude>
+    <ClInclude Include="shaker_class.h">
+      <Filter>shaker_object</Filter>
+    </ClInclude>
+    <ClInclude Include="pcre\config.h">
+      <Filter>pcre</Filter>
+    </ClInclude>
+    <ClInclude Include="pcre\pcre.h">
+      <Filter>pcre</Filter>
+    </ClInclude>
+    <ClInclude Include="shaker_define.h">
+      <Filter>define</Filter>
+    </ClInclude>
+    <ClInclude Include="pcre_define.h">
+      <Filter>define</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="regex.cpp">
@@ -127,6 +139,72 @@
     </ClCompile>
     <ClCompile Include="shaker_string.cpp">
       <Filter>shaker_base</Filter>
+    </ClCompile>
+    <ClCompile Include="shaker_class.cpp">
+      <Filter>shaker_object</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_byte_order.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_chartables.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_compile.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_config.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_dfa_exec.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_exec.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_fullinfo.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_get.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_globals.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_jit_compile.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_maketables.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_newline.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_ord2utf8.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_refcount.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_string_utils.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_study.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_tables.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_ucd.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_valid_utf8.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_version.c">
+      <Filter>pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="pcre\pcre_xclass.c">
+      <Filter>pcre</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

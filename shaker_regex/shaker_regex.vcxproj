@@ -40,7 +40,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -74,10 +74,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_Console;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_Console;_$(Configuration);_$(Platform);_$(PlatformTarget);_$(TargetPlatformIdentifier);HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)pcre;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -85,6 +87,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)pcre;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -123,11 +126,14 @@
     <ClInclude Include="FileIO.h" />
     <ClInclude Include="FileOption.h" />
     <ClInclude Include="nocopy.h" />
-    <ClInclude Include="pcre.h" />
+    <ClInclude Include="pcre\config.h" />
+    <ClInclude Include="pcre\pcre.h" />
+    <ClInclude Include="pcre_define.h" />
     <ClInclude Include="regex.h" />
     <ClInclude Include="regex_cache.h" />
     <ClInclude Include="shaker_assert.h" />
     <ClInclude Include="shaker_base.h" />
+    <ClInclude Include="shaker_class.h" />
     <ClInclude Include="shaker_debug.h" />
     <ClInclude Include="shaker_define.h" />
     <ClInclude Include="shaker_object.h" />
@@ -141,8 +147,30 @@
   <ItemGroup>
     <ClCompile Include="FileIO.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="pcre\pcre_byte_order.c" />
+    <ClCompile Include="pcre\pcre_chartables.c" />
+    <ClCompile Include="pcre\pcre_compile.c" />
+    <ClCompile Include="pcre\pcre_config.c" />
+    <ClCompile Include="pcre\pcre_dfa_exec.c" />
+    <ClCompile Include="pcre\pcre_exec.c" />
+    <ClCompile Include="pcre\pcre_fullinfo.c" />
+    <ClCompile Include="pcre\pcre_get.c" />
+    <ClCompile Include="pcre\pcre_globals.c" />
+    <ClCompile Include="pcre\pcre_jit_compile.c" />
+    <ClCompile Include="pcre\pcre_maketables.c" />
+    <ClCompile Include="pcre\pcre_newline.c" />
+    <ClCompile Include="pcre\pcre_ord2utf8.c" />
+    <ClCompile Include="pcre\pcre_refcount.c" />
+    <ClCompile Include="pcre\pcre_string_utils.c" />
+    <ClCompile Include="pcre\pcre_study.c" />
+    <ClCompile Include="pcre\pcre_tables.c" />
+    <ClCompile Include="pcre\pcre_ucd.c" />
+    <ClCompile Include="pcre\pcre_valid_utf8.c" />
+    <ClCompile Include="pcre\pcre_version.c" />
+    <ClCompile Include="pcre\pcre_xclass.c" />
     <ClCompile Include="regex.cpp" />
     <ClCompile Include="regex_cache.cpp" />
+    <ClCompile Include="shaker_class.cpp" />
     <ClCompile Include="shaker_debug.cpp" />
     <ClCompile Include="shaker_string.cpp" />
     <ClCompile Include="shaker_timer.cpp" />

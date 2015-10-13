@@ -1,7 +1,7 @@
 #ifndef __REGEX__
 #define __REGEX__
 #include "shaker_define.h"
-#include "pcre.h"
+#include "pcre/pcre.h"
 #include <string>
 #include <vector>
 #include "nocopy.h"

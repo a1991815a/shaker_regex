@@ -3,7 +3,7 @@
 #include "shaker_define.h"
 
 SHAKER_NS_START;
-
+#include "shaker_string.h"
 
 
 SHAKER_NS_END;

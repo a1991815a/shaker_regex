@@ -11,6 +11,7 @@ using namespace std;
 #include "shaker_string.h"
 #include <intsafe.h>
 
+#define TOSTRING(A) #A
 void pp(const char* text, ...);
 
 int main() {
@@ -39,12 +40,14 @@ int main() {
 // 
 // 	cout << ss.c_str() << endl;
 
-	double x = DBL_MAX;
-	std::string ss = "asdasdasdasd";
-	shaker::shaker_string text;
-	text += ss;
+	shaker::string text =
+		"dfgdf;1231;48979;16587;956sd";
+	auto vv = text.split(";");
+	cout << vv.size() << endl;
+	for (auto& obj: vv)
+		cout << obj.c_str() << endl;
 
-	cout << text.c_str() << endl;
+
 
 	_getch();
 	return 0;
@@ -55,7 +58,7 @@ void pp(const char* text, ...)
 {
 	va_list ap;
 	va_start(ap, text);
-	int len = vsnprintf(nullptr, 0, text, ap);
+	int len = vsnprintf_s(nullptr, 0, UINT_MAX, text, ap);
 	cout << len << endl;
 	va_end(ap);
 }
