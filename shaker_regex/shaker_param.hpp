@@ -3,6 +3,7 @@
 #include "shaker_define.h"
 #include <vector>
 #include "shaker_type.h"
+#include "shaker_assert.h"
 
 SHAKER_NS_START;
 
@@ -37,12 +38,12 @@ public:
 		m_type = basetype_traits<_argTy>::value_enum;
 	};
 
-	template<_argTy>
+	template<typename _argTy>
 	_argTy& castTo(){
 		return *reinterpret_cast<_argTy*>(m_arg);
 	};
 
-	template<_argTy>
+	template<typename _argTy>
 	const _argTy& castTo() const{
 		return *reinterpret_cast<const _argTy*>(m_arg);
 	};
@@ -69,8 +70,8 @@ public:
 	};
 
 	shaker_param pop_arg(){
-		shaker_param param = m_vecParamList.back();
-		m_vecParamList.pop_back();
+		shaker_param param = *m_useParamList.back();
+		m_useParamList.pop_back();
 		return param;
 	};
 
@@ -80,8 +81,25 @@ public:
 	uint getParamCount() const{
 		return m_vecParamList.size();
 	};
+
+	void begin() {
+		auto itor = m_vecParamList.rbegin();
+		for (;itor != m_vecParamList.rend(); ++itor)
+			m_useParamList.push_back(&*itor);
+	};
+
+	void end() {
+		m_useParamList.clear();
+	};
+
+	template<typename _argTy>
+	_argTy& getParamList() {
+		auto& param = pop_arg();
+		return param.castTo<_argTy>();
+	};
 private:
 	std::vector<shaker_param> m_vecParamList;
+	std::vector<shaker_param*> m_useParamList;
 };
 
 

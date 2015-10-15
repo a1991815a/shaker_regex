@@ -193,6 +193,9 @@
     <ClCompile Include="shaker_class.cpp">
       <Filter>shaker_object</Filter>
     </ClCompile>
+    <ClCompile Include="shaker_function.cpp">
+      <Filter>shaker_function</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="regex.txt">

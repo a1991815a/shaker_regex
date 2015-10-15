@@ -13,6 +13,7 @@ using namespace std;
 #include "function_traits.h"
 #include "value_traits.h"
 #include "lua.hpp"
+#include "shaker_function.h"
 
 // template<typename TT>
 // struct pprint {
@@ -60,8 +61,8 @@ struct TypeList
 };
 
 
-int pppp(int, char, float, double, long long){
-	return 0;
+int pppp(int a, int b){
+	return a + b;
 };
 
 
@@ -79,12 +80,10 @@ int main() {
 
 // 	shaker::regex_cache::getInstance()->load_regex("regex.txt");
 // 	shaker::regex_cache::getInstance();
-	for (auto& obj: S_Function_Traits(pppp)::param_types_val)
-	{
-		DEBUG_BASETYPE(obj);
-	}
-
-
+	
+	shaker::shaker_function f((shaker::S_FuncPtr)pppp);
+	int ret = f.callThis<int>(5, 6);
+	cout << ret << endl;
 
 	_getch();
 	return 0;
