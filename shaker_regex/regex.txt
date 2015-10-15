@@ -1,3 +1,2 @@
-aaaa:as1df56s1\:sdfds;
-bbbb:sdgdfgsdgsdfgsa;
-cccc:dsfh3654tg56f\:\(\);
+s_invokeable:[(S_OBJECT)(SHAKER_OBJECT)]\s+static\s+[\d\D]+?(?=[;{])		\;
+s_object:[(S_INVOKEABLE)(SHAKER_INVOKEABLE)]		\;

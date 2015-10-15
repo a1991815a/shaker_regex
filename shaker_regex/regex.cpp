@@ -1,5 +1,5 @@
 #include "regex.h"
-#include <iostream>
+#include "shaker_debug.h"
 
 int shaker::regex::s_pPcreOption = 
 PCRE_BSR_ANYCRLF |
@@ -34,7 +34,7 @@ shaker::regex::regex(const std::string& patten)
 shaker::regex::regex(const regex& re)
 {	
 	m_pRegexBox = re.m_pRegexBox;
-	std::cout << "引用计数:" << m_pRegexBox.getReferenceCount() << std::endl;
+	SHAKER_DEBUG("引用计数: %d", m_pRegexBox.getReferenceCount());
 }
 
 shaker::regex::~regex()

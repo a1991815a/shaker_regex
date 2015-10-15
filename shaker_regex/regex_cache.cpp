@@ -20,7 +20,7 @@ void regex_cache::destroyInstance()
 
 regex_cache::regex_cache()
 {
-	push_regex(REGEX_SCRIPT, ".+?:[\\d\\D]+?(?=;)");
+	push_regex(REGEX_SCRIPT, ".+?:[\\d\\D]+?(?=(\\\\;))");
 }
 
 regex_cache::~regex_cache()
@@ -42,7 +42,7 @@ void shaker::regex_cache::load_regex_bydata(const std::string& data)
 	auto string_list = re.match_all(data);
 	if (string_list.size() == 0)
 		throw std::runtime_error("regex script's format is error or null!");
-	for (int i = 0; i < string_list.size(); ++i)
+	for (size_t i = 0; i < string_list.size(); ++i)
 	{
 		auto& script_obj = string_list.at(i);
 		int split_index = script_obj.find(':');

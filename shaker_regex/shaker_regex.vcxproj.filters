@@ -1,20 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="资源文件">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="pcre">
-      <UniqueIdentifier>{163e5afc-4cbe-4712-b946-acae7d5b0b28}</UniqueIdentifier>
     </Filter>
     <Filter Include="shaker_regex">
       <UniqueIdentifier>{6e4da9b9-a23c-4f66-ad25-dfb8aff6fb0c}</UniqueIdentifier>
@@ -51,6 +40,31 @@
     </Filter>
     <Filter Include="define">
       <UniqueIdentifier>{95a48b5a-76a1-415e-8573-e985850fa480}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaker_function">
+      <UniqueIdentifier>{8d446bfd-0dc5-47fc-b846-ec2af9c6b7bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="外部依赖库">
+      <UniqueIdentifier>{13c4688b-a45a-476d-a76a-c0209c9b5c0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="外部依赖库\pcre">
+      <UniqueIdentifier>{163e5afc-4cbe-4712-b946-acae7d5b0b28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaker_traits">
+      <UniqueIdentifier>{dc806581-2f16-46c2-b806-eea43ac7a452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaker_function\shaker_param">
+      <UniqueIdentifier>{566d8e37-653f-421e-a137-3a33755f817a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaker_lua">
+      <UniqueIdentifier>{0c3ad8db-7986-4325-8f70-4ae60ed494a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="外部依赖库\lua">
+      <UniqueIdentifier>{9fb7f4ba-2ce6-45ef-a452-cfbd1ebf6fa6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -105,17 +119,53 @@
     <ClInclude Include="shaker_class.h">
       <Filter>shaker_object</Filter>
     </ClInclude>
-    <ClInclude Include="pcre\config.h">
-      <Filter>pcre</Filter>
-    </ClInclude>
     <ClInclude Include="pcre\pcre.h">
-      <Filter>pcre</Filter>
+      <Filter>外部依赖库\pcre</Filter>
     </ClInclude>
     <ClInclude Include="shaker_define.h">
       <Filter>define</Filter>
     </ClInclude>
-    <ClInclude Include="pcre_define.h">
+    <ClInclude Include="shaker_function.h">
+      <Filter>shaker_function</Filter>
+    </ClInclude>
+    <ClInclude Include="pcre\pcre_define.h">
       <Filter>define</Filter>
+    </ClInclude>
+    <ClInclude Include="shaker_value.h">
+      <Filter>shaker_base</Filter>
+    </ClInclude>
+    <ClInclude Include="basetype_traits.h">
+      <Filter>shaker_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="function_traits.h">
+      <Filter>shaker_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="value_traits.h">
+      <Filter>shaker_traits</Filter>
+    </ClInclude>
+    <ClInclude Include="shaker_type.h">
+      <Filter>shaker_base</Filter>
+    </ClInclude>
+    <ClInclude Include="shaker_param.hpp">
+      <Filter>shaker_function\shaker_param</Filter>
+    </ClInclude>
+    <ClInclude Include="shaker_luaCFunction.h">
+      <Filter>shaker_lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lauxlib.h">
+      <Filter>外部依赖库\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lua.h">
+      <Filter>外部依赖库\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lua.hpp">
+      <Filter>外部依赖库\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\luaconf.h">
+      <Filter>外部依赖库\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lualib.h">
+      <Filter>外部依赖库\lua</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -123,7 +173,7 @@
       <Filter>shaker_regex</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
+      <Filter>main</Filter>
     </ClCompile>
     <ClCompile Include="regex_cache.cpp">
       <Filter>shaker_regex\regex_cache</Filter>
@@ -143,73 +193,18 @@
     <ClCompile Include="shaker_class.cpp">
       <Filter>shaker_object</Filter>
     </ClCompile>
-    <ClCompile Include="pcre\pcre_byte_order.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_chartables.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_compile.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_config.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_dfa_exec.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_exec.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_fullinfo.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_get.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_globals.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_jit_compile.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_maketables.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_newline.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_ord2utf8.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_refcount.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_string_utils.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_study.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_tables.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_ucd.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_valid_utf8.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_version.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="pcre\pcre_xclass.c">
-      <Filter>pcre</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="regex.txt">
       <Filter>资源文件</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lua\lua.lib">
+      <Filter>外部依赖库\lua</Filter>
+    </Library>
+    <Library Include="lua\luad.lib">
+      <Filter>外部依赖库\lua</Filter>
+    </Library>
   </ItemGroup>
 </Project>

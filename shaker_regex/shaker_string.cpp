@@ -317,7 +317,7 @@ shaker::ulonglong string::toULongLong() const
 
 float string::toFloat() const
 {
-	return atof(this->c_str());
+	return (float)atof(this->c_str());
 }
 
 double string::toDouble() const
