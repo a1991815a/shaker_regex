@@ -5,7 +5,10 @@
 SHAKER_NS_START;
 
 #if defined(_DEBUG)
-#define SHAKER_ASSERT(cond, msg, ...) _CrtDbgReport(_CRT_ASSERT, __FILE__, __LINE__, nullptr, msg, __VA_ARGS__)
+#define SHAKER_ASSERT(cond, msg, ...) \
+if(!(cond) && _CrtDbgReport(_CRT_ASSERT, __FILE__, __LINE__, nullptr, msg, __VA_ARGS__) == 1)	\
+_CrtDbgBreak()
+
 #else
 #define SHAKER_ASSERT(cond, msg, ...) 
 #endif

@@ -13,7 +13,13 @@ typedef void(*S_FuncPtr)(void);
 class shaker_function{
 public:
 	shaker_function();
-	shaker_function(S_FuncPtr ptr);
+	template<typename _fnTy>
+	shaker_function(_fnTy ptr) 
+		:m_pfnFunc(reinterpret_cast<S_FuncPtr>(ptr))
+	{
+		for (auto& obj: function_traits<_fnTy>::param_types_val)
+			m_vecParamType.push_back(obj);
+	};
 
 	BaseType getReturnType() const;
 	const std::vector<BaseType>& getParamType() const;
@@ -21,10 +27,7 @@ public:
 
 	template<typename _retTy, typename... _argsTy>
 	_retTy callThis(_argsTy... args){
-/*		S_ASSERT(sizeof...(args) !== m_vecParamType.size(), "param num mismatch!");*/
-
 		typedef _retTy(*tmpFn_type)(_argsTy...);
-
 
 		shaker_param_packer packer;
 		if (sizeof...(_argsTy) != 0)
@@ -35,10 +38,20 @@ public:
 			for (auto& obj : params)
 				packer.push_arg(obj);
 		}
+		
+		if (m_vecParamType.size() != 0) {
+			S_ASSERT(sizeof...(_argsTy) == m_vecParamType.size(), "param num mismatch!");
+		}
+
 		tmpFn_type func = reinterpret_cast<tmpFn_type>(m_pfnFunc);
 		packer.begin();
-		return func(packer.getParamList<_argsTy>()...);
+		if(basetype_traits<_retTy>::value_enum == BaseType::BT_VOID)
+			func(packer.getParamList<_argsTy>()...);
+		else
+			return func(packer.getParamList<_argsTy>()...);
 	};
+
+
 
 private:
 	S_FuncPtr				m_pfnFunc;

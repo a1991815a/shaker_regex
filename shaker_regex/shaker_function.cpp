@@ -8,12 +8,6 @@ shaker::shaker_function::shaker_function()
 
 }
 
-shaker::shaker_function::shaker_function(S_FuncPtr ptr)
-	:m_pfnFunc(ptr)
-{
-
-}
-
 BaseType shaker::shaker_function::getReturnType() const
 {
 	return m_eReturnType;

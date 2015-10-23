@@ -102,8 +102,11 @@ public:
 	double toDouble() const;
 	std::vector<string> split(string split_str, int offset = 0) const;
 
+	bool contain(const string& str) const;
 
 };
+
+typedef std::basic_string<byte> binary_string;
 
 SHAKER_NS_END;
 #endif

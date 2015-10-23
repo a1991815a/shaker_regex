@@ -127,10 +127,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="auto_ptr.hpp" />
-    <ClInclude Include="FileIO.h" />
-    <ClInclude Include="FileOption.h" />
-    <ClInclude Include="function_traits.h" />
+    <ClInclude Include="extersions\DataUtils\base64\base64.h" />
+    <ClInclude Include="extersions\DataUtils\DataUtils.h" />
+    <ClInclude Include="extersions\DataUtils\Data_Binary_t.h" />
+    <ClInclude Include="extersions\DataUtils\lzma\lzmat.h" />
+    <ClInclude Include="extersions\DataUtils\zlib\crc32.h" />
+    <ClInclude Include="extersions\DataUtils\zlib\deflate.h" />
+    <ClInclude Include="extersions\DataUtils\zlib\gzguts.h" />
+    <ClInclude Include="extersions\DataUtils\zlib\inffast.h" />
+    <ClInclude Include="extersions\DataUtils\zlib\inffixed.h" />
+    <ClInclude Include="extersions\DataUtils\zlib\inflate.h" />
+    <ClInclude Include="extersions\DataUtils\zlib\inftrees.h" />
+    <ClInclude Include="extersions\DataUtils\zlib\trees.h" />
+    <ClInclude Include="extersions\DataUtils\zlib\zconf.h" />
+    <ClInclude Include="extersions\DataUtils\zlib\zlib.h" />
+    <ClInclude Include="extersions\DataUtils\zlib\zlib_config.h" />
+    <ClInclude Include="extersions\DataUtils\zlib\zutil.h" />
+    <ClInclude Include="extersions\extersions.h" />
     <ClInclude Include="lua\lauxlib.h" />
     <ClInclude Include="lua\lua.h" />
     <ClInclude Include="lua\lua.hpp" />
@@ -139,41 +152,72 @@
     <ClInclude Include="nocopy.h" />
     <ClInclude Include="pcre\pcre.h" />
     <ClInclude Include="pcre\pcre_define.h" />
-    <ClInclude Include="regex.h" />
-    <ClInclude Include="regex_cache.h" />
+    <ClInclude Include="shaker_archive.h" />
     <ClInclude Include="shaker_assert.h" />
     <ClInclude Include="shaker_base.h" />
     <ClInclude Include="shaker_class.h" />
     <ClInclude Include="shaker_debug.h" />
     <ClInclude Include="shaker_define.h" />
+    <ClInclude Include="shaker_file.h" />
+    <ClInclude Include="shaker_file\FileIO.h" />
+    <ClInclude Include="shaker_file\FileOption.h" />
+    <ClInclude Include="shaker_file\FileStream.h" />
     <ClInclude Include="shaker_function.h" />
     <ClInclude Include="shaker_luaCFunction.h" />
+    <ClInclude Include="shaker_moc_header.hpp" />
     <ClInclude Include="shaker_object.h" />
     <ClInclude Include="shaker_param.hpp" />
+    <ClInclude Include="shaker_pointer_serialize.h" />
+    <ClInclude Include="shaker_regex\regex.h" />
+    <ClInclude Include="shaker_regex\regex_cache.h" />
     <ClInclude Include="shaker_serialization.h" />
     <ClInclude Include="shaker_string.h" />
-    <ClInclude Include="shaker_timer.h" />
+    <ClInclude Include="shaker_timer\shaker_timer.h" />
+    <ClInclude Include="shaker_traits\basetype_traits.h" />
+    <ClInclude Include="shaker_traits\function_traits.h" />
+    <ClInclude Include="shaker_traits\value_traits.h" />
     <ClInclude Include="shaker_type.h" />
     <ClInclude Include="shaker_value.h" />
-    <ClInclude Include="shared_ptr.hpp" />
-    <ClInclude Include="smart_ptr.hpp" />
-    <ClInclude Include="basetype_traits.h" />
-    <ClInclude Include="value_traits.h" />
-    <ClInclude Include="weak_ptr.hpp" />
+    <ClInclude Include="smart_ptr\auto_ptr.hpp" />
+    <ClInclude Include="smart_ptr\shared_ptr.hpp" />
+    <ClInclude Include="smart_ptr\smart_ptr.hpp" />
+    <ClInclude Include="smart_ptr\weak_ptr.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FileIO.cpp" />
+    <ClCompile Include="extersions\DataUtils\base64\base64.cpp" />
+    <ClCompile Include="extersions\DataUtils\DataUtils.cpp" />
+    <ClCompile Include="extersions\DataUtils\Data_Binary_t.cpp" />
+    <ClCompile Include="extersions\DataUtils\lzma\lzmat_dec.c" />
+    <ClCompile Include="extersions\DataUtils\lzma\lzmat_enc.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\adler32.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\compress.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\crc32.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\deflate.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\gzclose.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\gzlib.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\gzread.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\gzwrite.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\infback.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\inffast.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\inflate.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\inftrees.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\trees.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\uncompr.c" />
+    <ClCompile Include="extersions\DataUtils\zlib\zutil.c" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="regex.cpp" />
-    <ClCompile Include="regex_cache.cpp" />
     <ClCompile Include="shaker_class.cpp" />
     <ClCompile Include="shaker_debug.cpp" />
+    <ClCompile Include="shaker_file\FileIO.cpp" />
+    <ClCompile Include="shaker_file\FileStream.cpp" />
     <ClCompile Include="shaker_function.cpp" />
+    <ClCompile Include="shaker_regex\regex.cpp" />
+    <ClCompile Include="shaker_regex\regex_cache.cpp" />
     <ClCompile Include="shaker_string.cpp" />
-    <ClCompile Include="shaker_timer.cpp" />
+    <ClCompile Include="shaker_timer\shaker_timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="regex.txt" />
+    <Text Include="ser.txt" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="lua\lua.lib" />

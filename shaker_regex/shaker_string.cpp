@@ -353,4 +353,11 @@ std::vector<string> string::split(string split_str, int offset /*= 0*/) const
 	return ret_list;
 }
 
+bool string::contain(const string& str) const
+{
+	if (this->find(str.c_str()) != _Myt::npos)
+		return true;
+	return false;
+}
+
 SHAKER_NS_END;
